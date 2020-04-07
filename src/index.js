@@ -1,15 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
 
-const RerutnReactElement = ({ name, music }) => {
-  return (
-    <h2>
-      {name} {music}
-    </h2>
-  );
-};
+import { var1, function1, ReactComponent } from "./module";
 
-render(
-  <RerutnReactElement name="嘉門達夫" music="替え歌" />,
-  document.getElementById("root")
-);
+console.log(var1);
+
+function1();
+
+render(<ReactComponent />, document.getElementById("root"));
