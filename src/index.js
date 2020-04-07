@@ -1,15 +1,9 @@
 import React from "react";
 import { render } from "react-dom";
 
-import ClassComponent1 from "./ClassComponent1";
-import ClassComponent2 from "./ClassComponent2";
-import { ClassComponent3 } from "./ClassComponent3";
+import ReactComponent from "./ReactComponent";
 
 render(
-  <div>
-    <ClassComponent1 />
-    <ClassComponent2 />
-    <ClassComponent3 />
-  </div>,
+  <ReactComponent name="nakanishi" music="jazz" />,
   document.getElementById("root")
 );
