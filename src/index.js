@@ -1,10 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
 
-const RerutnReactElement = props => {
+const RerutnReactElement = ({ name, music }) => {
   return (
     <h2>
-      {props.name} {props.music}
+      {name} {music}
     </h2>
   );
 };
