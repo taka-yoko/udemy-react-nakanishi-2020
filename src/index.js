@@ -1,29 +1,20 @@
 import React from "react";
 import { render } from "react-dom";
 
-import ReactComponent from "./ReactComponent";
+class Human extends React.Component {
+  constructor(props) {
+    super(props);
 
-class Human {
-  constructor(name, music) {
-    this.name = name;
-    this.music = music;
+    this.state = { name: "Tamori" };
   }
 
-  callMyProfile() {
-    console.log(this.name, this.music);
+  render() {
+    return (
+      <h2>
+        {this.state.name} {this.props.age}
+      </h2>
+    );
   }
 }
 
-const tamori = new Human("タモリ", "ジャズ");
-const takeshi = new Human("たけし", "サックス");
-
-tamori.callMyProfile();
-takeshi.callMyProfile();
-
-render(
-  <div>
-    <ReactComponent name={tamori.name} music={tamori.music} />
-    <ReactComponent name={takeshi.name} music={takeshi.music} />
-  </div>,
-  document.getElementById("root")
-);
+render(<Human age="30" />, document.getElementById("root"));
