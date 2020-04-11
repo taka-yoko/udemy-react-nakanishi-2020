@@ -1,24 +1,41 @@
 import React from "react";
 import { render } from "react-dom";
 
-class Human extends React.Component {
+class H20 extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { temp: 0 };
+  }
 
-    this.state = { name: "Tamori" };
+  static get LOWEST() {
+    return 0;
+  }
+
+  static get HIGHEST() {
+    return 100;
   }
 
   render() {
     return (
-      <h2 onClick={this.onButtonClick}>
-        {this.state.name} {this.props.age}
-      </h2>
+      <div>
+        <h3>{this.state.temp}</h3>
+        <button onClick={this.onPlusClick}>+</button>
+        <button onClick={this.onMinusClick}>-</button>
+      </div>
     );
   }
 
-  onButtonClick = () => {
-    this.setState({ name: this.state.name + "san" });
+  onPlusClick = () => {
+    if (this.state.temp < H20.HIGHEST) {
+      this.setState({ temp: this.state.temp + 10 });
+    }
+  };
+
+  onMinusClick = () => {
+    if (this.state.temp > H20.LOWEST) {
+      this.setState({ temp: this.state.temp - 10 });
+    }
   };
 }
 
-render(<Human age="30" />, document.getElementById("root"));
+render(<H20 />, document.getElementById("root"));
