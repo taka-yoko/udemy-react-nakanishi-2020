@@ -1,10 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 
-class H20 extends React.Component {
+class Human extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { temp: 0 };
+
+    this.state = { age: 20 };
   }
 
   static get LOWEST() {
@@ -12,13 +13,29 @@ class H20 extends React.Component {
   }
 
   static get HIGHEST() {
-    return 100;
+    return 120;
+  }
+
+  static get KID() {
+    return 12;
+  }
+
+  static get YOUNG() {
+    return 29;
+  }
+
+  static get MIDDLE() {
+    return 59;
+  }
+
+  static get OLD() {
+    return 120;
   }
 
   render() {
     return (
       <div>
-        <h3>{this.state.temp}</h3>
+        <h3>{this.state.age}</h3>
         <button onClick={this.onPlusClick}>+</button>
         <button onClick={this.onMinusClick}>-</button>
       </div>
@@ -26,16 +43,16 @@ class H20 extends React.Component {
   }
 
   onPlusClick = () => {
-    if (this.state.temp < H20.HIGHEST) {
-      this.setState({ temp: this.state.temp + 10 });
+    if (this.state.age < Human.HIGHEST) {
+      this.setState({ age: this.state.age + 10 });
     }
   };
 
   onMinusClick = () => {
-    if (this.state.temp > H20.LOWEST) {
-      this.setState({ temp: this.state.temp - 10 });
+    if (this.state.age > Human.LOWEST) {
+      this.setState({ age: this.state.age - 10 });
     }
   };
 }
 
-render(<H20 />, document.getElementById("root"));
+render(<Human />, document.getElementById("root"));
